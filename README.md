@@ -13,7 +13,7 @@
 <h3 align="center">SSH HID Client</h3>
   <p align="center">
     Android app that allows you to use your phone as a wireless keyboard <br/>
-    ([adapter](https://github.com/AlexanderPavlenko/pi-keyboard) not included)
+    (adapter not included)
   </p>
 </div>
 
@@ -46,7 +46,7 @@
 ## About The Project
 
 This Android app allows your phone to connect via SSH to a gadget which presents itself as a keyboard.
-Since this happens at a very low level, the connected device sees it exactly as a normal keyboard and mouse, meaning
+Since this happens at a very low level, the connected device sees it exactly as a normal keyboard, meaning
 you don't need to install any software on the connected computer! For this reason, it will even work if the
 connected device is in its BIOS/UEFI. Even multimedia keys are supported, meaning you can send volume up/down
 keys to the connected computer to control media.
@@ -62,7 +62,7 @@ keys to the connected computer to control media.
 ### Prerequisites
 
 * Any device running Android
-* SSH access to a Linux device acting as an USB HID gadget
+* SSH access to a Linux device acting as an [USB HID gadget](https://github.com/AlexanderPavlenko/pi-keyboard)
 * Soft Keyboard, for example [Unexpected Keyboard](https://github.com/Julow/Unexpected-Keyboard)
 
 ### Installation (Binary)<a name="installation-binary"> </a>
@@ -92,11 +92,6 @@ keyboard. Now you can just start typing!
 Typing in the "Manual Input" text box will send all the characters that you've typed into the box to
 the connected device once you hit the "send" button.
 
-### Some Use Cases
-
-* Quickly be able to change BIOS/UEFI settings of a computer when you don't have a keyboard with you
-* Typing a long string (such as a password or IP address) into a console
-
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
@@ -107,7 +102,7 @@ the connected device once you hit the "send" button.
 
 - [X] Keyboard support
 - [ ] Add some special key buttons to the UI (like multimedia keys)
-- ~~[X] Touchpad support~~ removed
+- [X] Touchpad ~~support~~ removed
 - [X] Ability to send string all at once
 - [X] Add full settings page
 
