@@ -1,4 +1,4 @@
-package me.arianb.usb_hid_client
+package top.flvr.ssh_hid_client
 
 import android.app.Application
 import android.os.Bundle
@@ -13,9 +13,9 @@ import cafe.adriel.voyager.core.screen.Screen
 import cafe.adriel.voyager.navigator.Navigator
 import cafe.adriel.voyager.navigator.NavigatorDisposeBehavior
 import cafe.adriel.voyager.transitions.SlideTransition
-import me.arianb.usb_hid_client.settings.SettingsViewModel
-import me.arianb.usb_hid_client.troubleshooting.ProductionTree
-import me.arianb.usb_hid_client.ui.standalone_screens.OnboardingScreen
+import top.flvr.ssh_hid_client.settings.SettingsViewModel
+import top.flvr.ssh_hid_client.troubleshooting.ProductionTree
+import top.flvr.ssh_hid_client.ui.standalone_screens.OnboardingScreen
 import timber.log.Timber
 
 // Overriding Application so that the loggers only get created once, regardless of Activity lifecycle

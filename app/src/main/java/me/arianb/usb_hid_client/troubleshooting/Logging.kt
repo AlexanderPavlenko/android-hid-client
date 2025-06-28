@@ -1,4 +1,4 @@
-package me.arianb.usb_hid_client.troubleshooting
+package top.flvr.ssh_hid_client.troubleshooting
 
 import android.util.Log
 import timber.log.Timber

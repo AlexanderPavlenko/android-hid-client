@@ -7,7 +7,7 @@
     android:textAlignment="center"
     tools:context=".MainActivity">
 
-    <me.arianb.usb_hid_client.input_views.DirectInputKeyboardView
+    <top.flvr.ssh_hid_client.input_views.DirectInputKeyboardView
         android:id="@+id/etDirectInput"
         android:text=""
         android:hint=""

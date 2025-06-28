@@ -1,4 +1,4 @@
-package me.arianb.usb_hid_client.ui.theme
+package top.flvr.ssh_hid_client.ui.theme
 
 import androidx.compose.ui.unit.dp
 

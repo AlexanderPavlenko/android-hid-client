@@ -1,4 +1,4 @@
-package me.arianb.usb_hid_client.settings
+package top.flvr.ssh_hid_client.settings
 
 import android.app.Application
 import android.content.SharedPreferences
@@ -7,7 +7,7 @@ import androidx.preference.PreferenceManager
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.update
-import me.arianb.usb_hid_client.R
+import top.flvr.ssh_hid_client.R
 
 sealed class AppPreference(val preference: PreferenceKey<*>) {
     data object OnboardingDoneKey : BooleanPreferenceKey("onboarding_done", false)

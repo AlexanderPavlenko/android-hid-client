@@ -1,4 +1,4 @@
-package me.arianb.usb_hid_client.hid_utils
+package top.flvr.ssh_hid_client.hid_utils
 
 import android.view.KeyEvent
 import android.view.KeyEvent.*

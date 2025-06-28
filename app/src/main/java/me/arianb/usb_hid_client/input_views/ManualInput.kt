@@ -1,4 +1,4 @@
-package me.arianb.usb_hid_client.input_views
+package top.flvr.ssh_hid_client.input_views
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
@@ -17,11 +17,11 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.lifecycle.viewmodel.compose.viewModel
-import me.arianb.usb_hid_client.MainViewModel
-import me.arianb.usb_hid_client.R
-import me.arianb.usb_hid_client.hid_utils.KeyCodeTranslation
-import me.arianb.usb_hid_client.settings.SettingsViewModel
-import me.arianb.usb_hid_client.ui.theme.PaddingLarge
+import top.flvr.ssh_hid_client.MainViewModel
+import top.flvr.ssh_hid_client.R
+import top.flvr.ssh_hid_client.hid_utils.KeyCodeTranslation
+import top.flvr.ssh_hid_client.settings.SettingsViewModel
+import top.flvr.ssh_hid_client.ui.theme.PaddingLarge
 import timber.log.Timber
 
 @Composable

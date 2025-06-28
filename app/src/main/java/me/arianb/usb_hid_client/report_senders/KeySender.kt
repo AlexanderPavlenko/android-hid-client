@@ -1,4 +1,4 @@
-package me.arianb.usb_hid_client.report_senders
+package top.flvr.ssh_hid_client.report_senders
 
 import kossh.impl.SSHShell
 

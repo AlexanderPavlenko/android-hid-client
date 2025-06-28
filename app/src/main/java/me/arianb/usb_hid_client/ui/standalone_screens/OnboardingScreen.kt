@@ -1,4 +1,4 @@
-package me.arianb.usb_hid_client.ui.standalone_screens
+package top.flvr.ssh_hid_client.ui.standalone_screens
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.material3.Button
@@ -14,14 +14,14 @@ import cafe.adriel.voyager.core.screen.Screen
 import cafe.adriel.voyager.navigator.LocalNavigator
 import cafe.adriel.voyager.navigator.Navigator
 import cafe.adriel.voyager.navigator.currentOrThrow
-import me.arianb.usb_hid_client.MainScreen
-import me.arianb.usb_hid_client.R
-import me.arianb.usb_hid_client.settings.AppPreference
-import me.arianb.usb_hid_client.settings.SettingsViewModel
-import me.arianb.usb_hid_client.ui.theme.PaddingExtraExtraLarge
-import me.arianb.usb_hid_client.ui.utils.BasicPage
-import me.arianb.usb_hid_client.ui.utils.BasicTopBar
-import me.arianb.usb_hid_client.ui.utils.DarkLightModePreviews
+import top.flvr.ssh_hid_client.MainScreen
+import top.flvr.ssh_hid_client.R
+import top.flvr.ssh_hid_client.settings.AppPreference
+import top.flvr.ssh_hid_client.settings.SettingsViewModel
+import top.flvr.ssh_hid_client.ui.theme.PaddingExtraExtraLarge
+import top.flvr.ssh_hid_client.ui.utils.BasicPage
+import top.flvr.ssh_hid_client.ui.utils.BasicTopBar
+import top.flvr.ssh_hid_client.ui.utils.DarkLightModePreviews
 
 class OnboardingScreen : Screen {
     @Composable

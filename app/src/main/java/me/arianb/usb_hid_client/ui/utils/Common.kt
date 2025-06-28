@@ -1,4 +1,4 @@
-package me.arianb.usb_hid_client.ui.utils
+package top.flvr.ssh_hid_client.ui.utils
 
 import android.content.res.Configuration
 import androidx.compose.foundation.layout.Arrangement
@@ -33,11 +33,11 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.viewmodel.compose.viewModel
 import cafe.adriel.voyager.navigator.LocalNavigator
 import cafe.adriel.voyager.navigator.currentOrThrow
-import me.arianb.usb_hid_client.settings.AppTheme
-import me.arianb.usb_hid_client.settings.SettingsViewModel
-import me.arianb.usb_hid_client.ui.theme.PaddingLarge
-import me.arianb.usb_hid_client.ui.theme.PaddingNormal
-import me.arianb.usb_hid_client.ui.theme.USBHIDClientTheme
+import top.flvr.ssh_hid_client.settings.AppTheme
+import top.flvr.ssh_hid_client.settings.SettingsViewModel
+import top.flvr.ssh_hid_client.ui.theme.PaddingLarge
+import top.flvr.ssh_hid_client.ui.theme.PaddingNormal
+import top.flvr.ssh_hid_client.ui.theme.USBHIDClientTheme
 
 @Composable
 fun BasicPage(

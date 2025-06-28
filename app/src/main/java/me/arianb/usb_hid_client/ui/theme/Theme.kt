@@ -1,4 +1,4 @@
-package me.arianb.usb_hid_client.ui.theme
+package top.flvr.ssh_hid_client.ui.theme
 
 import android.app.Activity
 import android.os.Build
@@ -17,8 +17,8 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
 import androidx.core.view.WindowCompat
 import androidx.lifecycle.viewmodel.compose.viewModel
-import me.arianb.usb_hid_client.settings.AppTheme
-import me.arianb.usb_hid_client.settings.SettingsViewModel
+import top.flvr.ssh_hid_client.settings.AppTheme
+import top.flvr.ssh_hid_client.settings.SettingsViewModel
 
 private val DarkColorScheme = darkColorScheme(
     primary = Purple80,

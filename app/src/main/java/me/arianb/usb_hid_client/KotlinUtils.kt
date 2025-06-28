@@ -1,4 +1,4 @@
-package me.arianb.usb_hid_client
+package top.flvr.ssh_hid_client
 
 import android.os.Build
 import android.os.Bundle

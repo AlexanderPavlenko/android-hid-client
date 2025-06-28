@@ -1,4 +1,4 @@
-package me.arianb.usb_hid_client.ui.standalone_screens
+package top.flvr.ssh_hid_client.ui.standalone_screens
 
 import android.text.method.LinkMovementMethod
 import android.util.TypedValue
@@ -24,15 +24,15 @@ import androidx.compose.ui.viewinterop.AndroidView
 import androidx.core.widget.TextViewCompat
 import cafe.adriel.voyager.core.screen.Screen
 import cafe.adriel.voyager.navigator.Navigator
-import me.arianb.usb_hid_client.R
-import me.arianb.usb_hid_client.ui.theme.PaddingExtraLarge
-import me.arianb.usb_hid_client.ui.theme.PaddingNone
-import me.arianb.usb_hid_client.ui.theme.PaddingNormal
-import me.arianb.usb_hid_client.ui.theme.PaddingSmall
-import me.arianb.usb_hid_client.ui.utils.BasicPage
-import me.arianb.usb_hid_client.ui.utils.DarkLightModePreviews
-import me.arianb.usb_hid_client.ui.utils.SimpleNavTopBar
-import me.arianb.usb_hid_client.ui.utils.getColorByTheme
+import top.flvr.ssh_hid_client.R
+import top.flvr.ssh_hid_client.ui.theme.PaddingExtraLarge
+import top.flvr.ssh_hid_client.ui.theme.PaddingNone
+import top.flvr.ssh_hid_client.ui.theme.PaddingNormal
+import top.flvr.ssh_hid_client.ui.theme.PaddingSmall
+import top.flvr.ssh_hid_client.ui.utils.BasicPage
+import top.flvr.ssh_hid_client.ui.utils.DarkLightModePreviews
+import top.flvr.ssh_hid_client.ui.utils.SimpleNavTopBar
+import top.flvr.ssh_hid_client.ui.utils.getColorByTheme
 
 
 class HelpScreen : Screen {

@@ -1,4 +1,4 @@
-package me.arianb.usb_hid_client
+package top.flvr.ssh_hid_client
 
 import android.app.Application
 import android.util.Log
@@ -10,9 +10,9 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
-import me.arianb.usb_hid_client.report_senders.KeySender
-import me.arianb.usb_hid_client.settings.AppPreference
-import me.arianb.usb_hid_client.settings.UserPreferencesRepository
+import top.flvr.ssh_hid_client.report_senders.KeySender
+import top.flvr.ssh_hid_client.settings.AppPreference
+import top.flvr.ssh_hid_client.settings.UserPreferencesRepository
 import timber.log.Timber
 import java.io.FileNotFoundException
 import java.io.IOException

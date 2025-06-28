@@ -1,4 +1,4 @@
-package me.arianb.usb_hid_client
+package top.flvr.ssh_hid_client
 
 import android.content.res.Configuration
 import androidx.compose.foundation.layout.Arrangement
@@ -35,17 +35,17 @@ import cafe.adriel.voyager.core.screen.Screen
 import cafe.adriel.voyager.navigator.LocalNavigator
 import cafe.adriel.voyager.navigator.Navigator
 import cafe.adriel.voyager.navigator.currentOrThrow
-import me.arianb.usb_hid_client.input_views.DirectInput
-import me.arianb.usb_hid_client.input_views.DirectInputIconButton
-import me.arianb.usb_hid_client.input_views.ManualInput
-import me.arianb.usb_hid_client.settings.SettingsScreen
-import me.arianb.usb_hid_client.settings.SettingsViewModel
-import me.arianb.usb_hid_client.ui.standalone_screens.HelpScreen
-import me.arianb.usb_hid_client.ui.standalone_screens.InfoScreen
-import me.arianb.usb_hid_client.ui.theme.PaddingNormal
-import me.arianb.usb_hid_client.ui.utils.BasicPage
-import me.arianb.usb_hid_client.ui.utils.BasicTopBar
-import me.arianb.usb_hid_client.ui.utils.DarkLightModePreviews
+import top.flvr.ssh_hid_client.input_views.DirectInput
+import top.flvr.ssh_hid_client.input_views.DirectInputIconButton
+import top.flvr.ssh_hid_client.input_views.ManualInput
+import top.flvr.ssh_hid_client.settings.SettingsScreen
+import top.flvr.ssh_hid_client.settings.SettingsViewModel
+import top.flvr.ssh_hid_client.ui.standalone_screens.HelpScreen
+import top.flvr.ssh_hid_client.ui.standalone_screens.InfoScreen
+import top.flvr.ssh_hid_client.ui.theme.PaddingNormal
+import top.flvr.ssh_hid_client.ui.utils.BasicPage
+import top.flvr.ssh_hid_client.ui.utils.BasicTopBar
+import top.flvr.ssh_hid_client.ui.utils.DarkLightModePreviews
 import timber.log.Timber
 
 class MainScreen : Screen {

@@ -1,4 +1,4 @@
-package me.arianb.usb_hid_client.settings
+package top.flvr.ssh_hid_client.settings
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel

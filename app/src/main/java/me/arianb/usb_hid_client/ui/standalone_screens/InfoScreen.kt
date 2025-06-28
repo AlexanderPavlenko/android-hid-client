@@ -1,4 +1,4 @@
-package me.arianb.usb_hid_client.ui.standalone_screens
+package top.flvr.ssh_hid_client.ui.standalone_screens
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.padding
@@ -17,11 +17,11 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import cafe.adriel.voyager.core.screen.Screen
 import cafe.adriel.voyager.navigator.Navigator
-import me.arianb.usb_hid_client.R
-import me.arianb.usb_hid_client.ui.theme.PaddingNormal
-import me.arianb.usb_hid_client.ui.utils.BasicPage
-import me.arianb.usb_hid_client.ui.utils.DarkLightModePreviews
-import me.arianb.usb_hid_client.ui.utils.SimpleNavTopBar
+import top.flvr.ssh_hid_client.R
+import top.flvr.ssh_hid_client.ui.theme.PaddingNormal
+import top.flvr.ssh_hid_client.ui.utils.BasicPage
+import top.flvr.ssh_hid_client.ui.utils.DarkLightModePreviews
+import top.flvr.ssh_hid_client.ui.utils.SimpleNavTopBar
 
 class InfoScreen : Screen {
     @Composable

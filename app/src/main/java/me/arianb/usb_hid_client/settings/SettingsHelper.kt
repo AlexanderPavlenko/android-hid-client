@@ -1,4 +1,4 @@
-package me.arianb.usb_hid_client.settings
+package top.flvr.ssh_hid_client.settings
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
@@ -27,7 +27,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.lifecycle.viewmodel.compose.viewModel
-import me.arianb.usb_hid_client.ui.utils.LabeledCategory
+import top.flvr.ssh_hid_client.ui.utils.LabeledCategory
 import kotlin.reflect.KProperty1
 
 // This is basically just an alias now

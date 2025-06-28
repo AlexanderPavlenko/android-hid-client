@@ -158,7 +158,7 @@
     <issue
         id="TypographyQuotes"
         message="Replace apostrophe (&apos;) with typographic apostrophe (’, &amp;#8217;) ?"
-        errorLine1="    &lt;string name=&quot;help_faq_a1&quot;>You can create an issue &lt;a href=&quot;https://github.com/Arian04/android-hid-client/issues&quot;>here&lt;/a>. Just make sure it hasn\&apos;t already been reported.&lt;/string>"
+        errorLine1="    &lt;string name=&quot;help_faq_a1&quot;>You can create an issue &lt;a href=&quot;https://github.com/AlexanderPavlenko/android-hid-client/issues&quot;>here&lt;/a>. Just make sure it hasn\&apos;t already been reported.&lt;/string>"
         errorLine2="                                                                                                                                               ~">
         <location
             file="src/main/res/values/strings.xml"
@@ -191,7 +191,7 @@
     <issue
         id="TypographyQuotes"
         message="Replace apostrophe (&apos;) with typographic apostrophe (’, &amp;#8217;) ?"
-        errorLine1="    &lt;string name=&quot;help_faq_a3&quot;>First, make sure your device satisfies all prerequisites listed &lt;a href=&quot;https://github.com/Arian04/android-hid-client#prerequisites&quot;>here&lt;/a> and read the above answer about how to use the app. If that doesn\&apos;t work, I recommend submitting a bug report as explained above.&lt;/string>"
+        errorLine1="    &lt;string name=&quot;help_faq_a3&quot;>First, make sure your device satisfies all prerequisites listed &lt;a href=&quot;https://github.com/AlexanderPavlenko/android-hid-client#prerequisites&quot;>here&lt;/a> and read the above answer about how to use the app. If that doesn\&apos;t work, I recommend submitting a bug report as explained above.&lt;/string>"
         errorLine2="                                                                                                                                                                                                                                        ~">
         <location
             file="src/main/res/values/strings.xml"

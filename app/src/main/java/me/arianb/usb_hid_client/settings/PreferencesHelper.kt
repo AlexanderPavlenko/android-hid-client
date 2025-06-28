@@ -1,4 +1,4 @@
-package me.arianb.usb_hid_client.settings
+package top.flvr.ssh_hid_client.settings
 
 import android.content.SharedPreferences
 import androidx.core.content.edit

@@ -16,5 +16,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "USB_HID_Client"
+rootProject.name = "SSH_HID_Client"
 include(":app")

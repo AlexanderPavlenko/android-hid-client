@@ -1,11 +1,11 @@
-package me.arianb.usb_hid_client.input_views
+package top.flvr.ssh_hid_client.input_views
 
 import android.view.KeyEvent
 import android.view.View
 import android.view.inputmethod.BaseInputConnection
 import android.view.inputmethod.TextAttribute
-import me.arianb.usb_hid_client.hid_utils.KeyCodeTranslation
-import me.arianb.usb_hid_client.report_senders.KeySender
+import top.flvr.ssh_hid_client.hid_utils.KeyCodeTranslation
+import top.flvr.ssh_hid_client.report_senders.KeySender
 import timber.log.Timber
 
 class MyInputConnection(

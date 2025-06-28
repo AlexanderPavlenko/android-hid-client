@@ -6,9 +6,9 @@ plugins {
 }
 
 android {
-    namespace = "me.arianb.usb_hid_client"
+    namespace = "top.flvr.ssh_hid_client"
     defaultConfig {
-        applicationId = "me.arianb.usb_hid_client"
+        applicationId = "top.flvr.ssh_hid_client"
 
         // SDK support
         minSdk = 26
@@ -16,8 +16,8 @@ android {
         compileSdk = 35
 
         // App Versioning
-        versionCode = 300
-        versionName = "v3.0.0"
+        versionCode = 1
+        versionName = "0.1"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {

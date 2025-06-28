@@ -1,4 +1,4 @@
-package me.arianb.usb_hid_client.input_views
+package top.flvr.ssh_hid_client.input_views
 
 import android.content.Context
 import android.text.InputType
@@ -19,12 +19,12 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.viewinterop.AndroidViewBinding
 import androidx.lifecycle.viewmodel.compose.viewModel
-import me.arianb.usb_hid_client.MainViewModel
-import me.arianb.usb_hid_client.R
-import me.arianb.usb_hid_client.databinding.DirectInputViewBinding
-import me.arianb.usb_hid_client.hid_utils.KeyCodeTranslation
-import me.arianb.usb_hid_client.report_senders.KeySender
-import me.arianb.usb_hid_client.settings.SettingsViewModel
+import top.flvr.ssh_hid_client.MainViewModel
+import top.flvr.ssh_hid_client.R
+import top.flvr.ssh_hid_client.databinding.DirectInputViewBinding
+import top.flvr.ssh_hid_client.hid_utils.KeyCodeTranslation
+import top.flvr.ssh_hid_client.report_senders.KeySender
+import top.flvr.ssh_hid_client.settings.SettingsViewModel
 import timber.log.Timber
 
 class DirectInputKeyboardView : AppCompatEditText {

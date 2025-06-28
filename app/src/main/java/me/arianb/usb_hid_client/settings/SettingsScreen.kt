@@ -1,4 +1,4 @@
-package me.arianb.usb_hid_client.settings
+package top.flvr.ssh_hid_client.settings
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.padding
@@ -12,20 +12,20 @@ import androidx.compose.ui.res.stringResource
 import androidx.lifecycle.viewmodel.compose.viewModel
 import cafe.adriel.voyager.core.screen.Screen
 import cafe.adriel.voyager.navigator.Navigator
-import me.arianb.usb_hid_client.R
-import me.arianb.usb_hid_client.settings.AppSettings.AppThemePreference
-import me.arianb.usb_hid_client.settings.AppSettings.ClearManualInputOnSend
-import me.arianb.usb_hid_client.settings.AppSettings.DynamicColors
-import me.arianb.usb_hid_client.settings.AppSettings.MediaKeyPassthrough
-import me.arianb.usb_hid_client.settings.AppSettings.PreferenceCategory
-import me.arianb.usb_hid_client.settings.AppSettings.RemoteHost
-import me.arianb.usb_hid_client.settings.AppSettings.RemoteUser
-import me.arianb.usb_hid_client.settings.AppSettings.RemotePassword
-import me.arianb.usb_hid_client.ui.theme.PaddingNormal
-import me.arianb.usb_hid_client.ui.theme.isDynamicColorAvailable
-import me.arianb.usb_hid_client.ui.utils.BasicPage
-import me.arianb.usb_hid_client.ui.utils.DarkLightModePreviews
-import me.arianb.usb_hid_client.ui.utils.SimpleNavTopBar
+import top.flvr.ssh_hid_client.R
+import top.flvr.ssh_hid_client.settings.AppSettings.AppThemePreference
+import top.flvr.ssh_hid_client.settings.AppSettings.ClearManualInputOnSend
+import top.flvr.ssh_hid_client.settings.AppSettings.DynamicColors
+import top.flvr.ssh_hid_client.settings.AppSettings.MediaKeyPassthrough
+import top.flvr.ssh_hid_client.settings.AppSettings.PreferenceCategory
+import top.flvr.ssh_hid_client.settings.AppSettings.RemoteHost
+import top.flvr.ssh_hid_client.settings.AppSettings.RemoteUser
+import top.flvr.ssh_hid_client.settings.AppSettings.RemotePassword
+import top.flvr.ssh_hid_client.ui.theme.PaddingNormal
+import top.flvr.ssh_hid_client.ui.theme.isDynamicColorAvailable
+import top.flvr.ssh_hid_client.ui.utils.BasicPage
+import top.flvr.ssh_hid_client.ui.utils.DarkLightModePreviews
+import top.flvr.ssh_hid_client.ui.utils.SimpleNavTopBar
 
 class SettingsScreen : Screen {
     @Composable
