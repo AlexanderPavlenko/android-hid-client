@@ -51,12 +51,6 @@ android {
         compose = true
         viewBinding = true
     }
-    externalNativeBuild {
-        cmake {
-            path = file("src/main/cpp/CMakeLists.txt")
-            version = "3.22.1"
-        }
-    }
 
     // Disable Google-encrypted binary blobs
     dependenciesInfo {
@@ -159,9 +153,8 @@ dependencies {
     // Logging
     implementation(libs.timber)
 
-    // Root helper library
-    implementation(libs.libsu.core)
-    implementation(libs.libsu.service)
+    // SSH
+    implementation(libs.kossh)
 
     // Navigation
     implementation(libs.voyager.navigator)

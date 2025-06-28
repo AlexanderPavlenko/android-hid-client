@@ -38,11 +38,8 @@ import cafe.adriel.voyager.navigator.currentOrThrow
 import me.arianb.usb_hid_client.input_views.DirectInput
 import me.arianb.usb_hid_client.input_views.DirectInputIconButton
 import me.arianb.usb_hid_client.input_views.ManualInput
-import me.arianb.usb_hid_client.input_views.Touchpad
 import me.arianb.usb_hid_client.settings.SettingsScreen
 import me.arianb.usb_hid_client.settings.SettingsViewModel
-import me.arianb.usb_hid_client.shell_utils.RootStateHolder
-import me.arianb.usb_hid_client.troubleshooting.TroubleshootingScreen
 import me.arianb.usb_hid_client.ui.standalone_screens.HelpScreen
 import me.arianb.usb_hid_client.ui.standalone_screens.InfoScreen
 import me.arianb.usb_hid_client.ui.theme.PaddingNormal
@@ -63,22 +60,12 @@ fun MainPage(
     mainViewModel: MainViewModel = viewModel(),
     settingsViewModel: SettingsViewModel = viewModel()
 ) {
-    val rootStateHolder = RootStateHolder.getInstance()
-    val rootState by rootStateHolder.uiState.collectAsState()
-
-    // TODO: should i do this in VM constructor? but then I cant differentiate between
-    //       missing char dev on startup or a weird issue of it missing AFTER startup.
-    //       but should I even do that? should I just handle both situations the same way?
-    val showMissingCharDeviceOnStartupAlert = remember { mutableStateOf(mainViewModel.anyCharacterDeviceMissing()) }
-
     val uiState by mainViewModel.uiState.collectAsState()
     Timber.d("in MainScreen, uiState is: %s", uiState.toString())
 
     val snackbarHostState = remember { SnackbarHostState() }
 
     val preferences by settingsViewModel.userPreferencesFlow.collectAsState()
-    val isDeviceInLandscape = LocalConfiguration.current.orientation == Configuration.ORIENTATION_LANDSCAPE
-    val hideManualInput = preferences.isTouchpadFullscreenInLandscape && isDeviceInLandscape
 
     val padding = PaddingNormal
     BasicPage(
@@ -94,63 +81,15 @@ fun MainPage(
         // View (Direct Input). Otherwise, there's gonna be an awkward spacing created by the invisible View.
         verticalArrangement = Arrangement.Top
     ) {
-        if (showMissingCharDeviceOnStartupAlert.value) {
-            Timber.d("MISSING CHAR DEV ON START")
-            CreateCharDevicesAlertDialog(showMissingCharDeviceOnStartupAlert)
-        }
-
-        if (!hideManualInput) {
-            ManualInput()
-            Spacer(Modifier.height(PaddingNormal))
-        }
+        ManualInput()
+        Spacer(Modifier.height(PaddingNormal))
 
         // This has to be here, if I move it below Touchpad(), it never gets focused. I think it's because it ends up
         // out of the user's view, so Android just doesn't allow it to gain focus.
         DirectInput()
 
-        Touchpad()
-
         LaunchedEffect(uiState) {
             Timber.d("LAUNCHED EFFECT RUNNING WITH UI STATE = %s", uiState.toString())
-            if (rootState.missingRootPrivileges) {
-                // TODO: if this fails here, I need to make it incredibly clear that the app will not work.
-                //       right now, you can still try to use it and it'll fail. It should just "lock" the inputs
-                //       if this fails I think.
-                snackbarHostState.showSnackbar(
-                    message = "Missing root permissions",
-                    duration = SnackbarDuration.Long
-                )
-            } else if (uiState.isDeviceUnplugged) {
-                snackbarHostState.showSnackbar(
-                    message = "ERROR: Your device seems to be disconnected. If not, try reseating the USB cable",
-                    duration = SnackbarDuration.Long
-                )
-            } else if (!showMissingCharDeviceOnStartupAlert.value && uiState.missingCharacterDevice) {
-                val result = snackbarHostState.showSnackbar(
-                    message = "ERROR: Character device has disappeared since the app was started.",
-                    actionLabel = "RECREATE",
-                )
-                when (result) {
-                    SnackbarResult.ActionPerformed -> {
-                        mainViewModel.createCharacterDevices()
-                    }
-
-                    SnackbarResult.Dismissed -> {}
-                }
-            } else if (uiState.isCharacterDevicePermissionsBroken != null) {
-                val characterDevicePath = uiState.isCharacterDevicePermissionsBroken!!
-                val result = snackbarHostState.showSnackbar(
-                    message = "ERROR: Character device permissions seem incorrect.",
-                    actionLabel = "FIX",
-                )
-                when (result) {
-                    SnackbarResult.ActionPerformed -> {
-                        mainViewModel.fixCharacterDevicePermissions(characterDevicePath)
-                    }
-
-                    SnackbarResult.Dismissed -> {}
-                }
-            }
         }
     }
 }
@@ -178,7 +117,6 @@ private fun MainTopBar() {
                 ) {
                     val menuItems = arrayOf(
                         MenuItem(SettingsScreen(), stringResource(R.string.settings)),
-                        MenuItem(TroubleshootingScreen(), stringResource(R.string.troubleshooting_title)),
                         MenuItem(HelpScreen(), stringResource(R.string.help)),
                         MenuItem(InfoScreen(), stringResource(R.string.info))
                     )
@@ -215,34 +153,6 @@ private fun MainTopBar() {
                     }
                 }
             }
-        }
-    )
-}
-
-@Composable
-private fun CreateCharDevicesAlertDialog(showAlert: MutableState<Boolean>, mainViewModel: MainViewModel = viewModel()) {
-    AlertDialog(
-        title = { Text("Character device(s) do not exist") },
-        text = { Text("Add HID functions to the default USB gadget? This must be re-done after every reboot.\n\n**The app will not work if you decline**") },
-        confirmButton = {
-            TextButton(
-                content = { Text("YES") },
-                onClick = {
-                    mainViewModel.createCharacterDevices()
-                    showAlert.value = false
-                }
-            )
-        },
-        dismissButton = {
-            TextButton(
-                content = { Text("NO") },
-                onClick = {
-                    showAlert.value = false
-                }
-            )
-        },
-        onDismissRequest = {
-            // Intentionally blocking dialog dismissal here since I want the user to make a conscious decision
         }
     )
 }

@@ -7,6 +7,7 @@ import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.ListItem
 import androidx.compose.material3.ListItemColors
 import androidx.compose.material3.ListItemDefaults
+import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.RadioButton
 import androidx.compose.material3.RadioButtonColors
 import androidx.compose.material3.RadioButtonDefaults
@@ -23,6 +24,8 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.input.PasswordVisualTransformation
+import androidx.compose.ui.text.input.VisualTransformation
 import androidx.lifecycle.viewmodel.compose.viewModel
 import me.arianb.usb_hid_client.ui.utils.LabeledCategory
 import kotlin.reflect.KProperty1
@@ -63,6 +66,25 @@ fun SwitchPreference(
                 },
             )
         }
+    )
+}
+
+@Composable
+fun TextPreference(
+    title: String,
+    preference: StringPreferenceKey,
+    viewModel: SettingsViewModel = viewModel(),
+    masked: Boolean = false,
+) {
+    var value by remember { mutableStateOf(viewModel.getPreference(preference)) }
+    OutlinedTextField(
+        label = { Text(title) },
+        value = value,
+        onValueChange = {
+            value = it
+            viewModel.setPreference(preference, value)
+        },
+        visualTransformation = if (masked) PasswordVisualTransformation() else VisualTransformation.None
     )
 }
 

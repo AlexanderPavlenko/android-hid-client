@@ -1,12 +1,8 @@
 package me.arianb.usb_hid_client.report_senders
 
-import me.arianb.usb_hid_client.hid_utils.KeyboardDevicePath
+import kossh.impl.SSHShell
 
-class KeySender(
-    keyboardDevicePath: KeyboardDevicePath
-) : ReportSender(
-    keyboardDevicePath
-) {
+class KeySender() : ReportSender() {
     fun addStandardKey(modifier: Byte, key: Byte) {
         super.addReportToChannel(byteArrayOf(STANDARD_KEY, modifier, 0, key, 0))
     }
@@ -17,14 +13,14 @@ class KeySender(
 
     // Every time we send a report, we only send the "key-down" event. This method will automatically send the "key-up"
     // event right afterward
-    override fun sendReport(report: ByteArray) {
+    override fun sendReport(report: ByteArray, shell: SSHShell) {
         // Send "key-down" report
-        writeBytes(report)
+        writeBytes(report, shell)
 
         // Send "key-up" report of all zeroes (preserving report ID) to release
         val releaseReport = ByteArray(report.size)
         releaseReport[0] = report[0]
-        writeBytes(releaseReport)
+        writeBytes(releaseReport, shell)
     }
 
     companion object {

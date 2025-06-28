@@ -16,22 +16,16 @@ import me.arianb.usb_hid_client.R
 import me.arianb.usb_hid_client.settings.AppSettings.AppThemePreference
 import me.arianb.usb_hid_client.settings.AppSettings.ClearManualInputOnSend
 import me.arianb.usb_hid_client.settings.AppSettings.DynamicColors
-import me.arianb.usb_hid_client.settings.AppSettings.ExperimentalMode
-import me.arianb.usb_hid_client.settings.AppSettings.FullyDisableGadgetDuringConfiguration
-import me.arianb.usb_hid_client.settings.AppSettings.KeyboardCharacterDevicePath
 import me.arianb.usb_hid_client.settings.AppSettings.MediaKeyPassthrough
 import me.arianb.usb_hid_client.settings.AppSettings.PreferenceCategory
-import me.arianb.usb_hid_client.settings.AppSettings.TouchpadCharacterDevicePath
-import me.arianb.usb_hid_client.settings.AppSettings.TouchpadFullscreenInLandscape
-import me.arianb.usb_hid_client.settings.AppSettings.TouchpadLoopbackMode
-import me.arianb.usb_hid_client.settings.AppSettings.UsbGadgetPath
+import me.arianb.usb_hid_client.settings.AppSettings.RemoteHost
+import me.arianb.usb_hid_client.settings.AppSettings.RemoteUser
+import me.arianb.usb_hid_client.settings.AppSettings.RemotePassword
 import me.arianb.usb_hid_client.ui.theme.PaddingNormal
 import me.arianb.usb_hid_client.ui.theme.isDynamicColorAvailable
 import me.arianb.usb_hid_client.ui.utils.BasicPage
 import me.arianb.usb_hid_client.ui.utils.DarkLightModePreviews
-import me.arianb.usb_hid_client.ui.utils.Experimental
 import me.arianb.usb_hid_client.ui.utils.SimpleNavTopBar
-import me.arianb.usb_hid_client.ui.utils.isExperimentalModeEnabled
 
 class SettingsScreen : Screen {
     @Composable
@@ -70,31 +64,11 @@ fun SettingsPage() {
             ClearManualInputOnSend()
         }
         PreferenceCategory(
-            title = stringResource(R.string.touchpad_label),
+            title = "SSH",
         ) {
-            TouchpadFullscreenInLandscape()
-            TouchpadLoopbackMode()
-        }
-
-        // only set `showDivider = false` for the last category.
-        // haven't found a nice way to do that implicitly yet.
-
-        PreferenceCategory(
-            title = stringResource(R.string.misc_header),
-            showDivider = isExperimentalModeEnabled()
-        ) {
-            ExperimentalMode()
-        }
-        Experimental {
-            PreferenceCategory(
-                title = stringResource(R.string.device_specific_quirks_header),
-                showDivider = false
-            ) {
-                FullyDisableGadgetDuringConfiguration()
-                UsbGadgetPath()
-                KeyboardCharacterDevicePath()
-                TouchpadCharacterDevicePath()
-            }
+            RemoteHost()
+            RemoteUser()
+            RemotePassword()
         }
     }
 }
@@ -146,15 +120,6 @@ private object AppSettings {
     }
 
     @Composable
-    fun TouchpadLoopbackMode() {
-        SwitchPreference(
-            title = stringResource(R.string.touchpad_loopback_mode_title),
-            summary = stringResource(R.string.touchpad_loopback_mode_summary),
-            preference = AppPreference.LoopbackMode
-        )
-    }
-
-    @Composable
     fun DynamicColors() {
         SwitchPreference(
             title = stringResource(R.string.dynamic_colors_title),
@@ -180,56 +145,27 @@ private object AppSettings {
     }
 
     @Composable
-    fun TouchpadFullscreenInLandscape() {
-        SwitchPreference(
-            title = stringResource(R.string.touchpad_fullscreen_in_landscape_title),
-            summary = stringResource(R.string.touchpad_fullscreen_in_landscape_summary),
-            preference = AppPreference.TouchpadFullscreenInLandscape
+    fun RemoteHost() {
+        TextPreference(
+            title = "Host",
+            preference = AppPreference.RemoteHostKey,
         )
     }
 
     @Composable
-    fun ExperimentalMode() {
-        SwitchPreference(
-            title = stringResource(R.string.experimental_mode_title),
-            summary = stringResource(R.string.experimental_mode_summary),
-            preference = AppPreference.ExperimentalMode
+    fun RemoteUser() {
+        TextPreference(
+            title = "User",
+            preference = AppPreference.RemoteUserKey,
         )
     }
 
     @Composable
-    fun UsbGadgetPath() {
-        TextDialogPreference(
-            title = stringResource(R.string.usb_gadget_path_title),
-            preference = AppPreference.UsbGadgetPathPref,
-            property = UserPreferences::usbGadgetPath
-        )
-    }
-
-    @Composable
-    fun KeyboardCharacterDevicePath() {
-        TextDialogPreference(
-            title = stringResource(R.string.keyboard_character_device_path),
-            preference = AppPreference.KeyboardCharacterDevicePath,
-            property = UserPreferences::keyboardCharacterDevicePath
-        )
-    }
-
-    @Composable
-    fun TouchpadCharacterDevicePath() {
-        TextDialogPreference(
-            title = stringResource(R.string.touchpad_character_device_path),
-            preference = AppPreference.TouchpadCharacterDevicePath,
-            property = UserPreferences::touchpadCharacterDevicePath
-        )
-    }
-
-    @Composable
-    fun FullyDisableGadgetDuringConfiguration() {
-        SwitchPreference(
-            title = stringResource(R.string.disable_gadget_functions_during_config),
-            summary = stringResource(R.string.disable_gadget_functions_during_config_summary),
-            preference = AppPreference.DisableGadgetFunctionsDuringConfiguration
+    fun RemotePassword() {
+        TextPreference(
+            title = "Password",
+            preference = AppPreference.RemotePasswordKey,
+            masked = true,
         )
     }
 }

@@ -1,4 +1,5 @@
 [versions]
+kossh = "0.0.4"
 kotlin = "2.1.21"
 androidGradlePlugin = "8.9.3"
 
@@ -49,9 +50,8 @@ androidx-compose-ui-unit = { group = "androidx.compose.ui", name = "ui-unit" }
 # Logging
 timber = { group = "com.jakewharton.timber", name = "timber", version.ref = "timber" }
 
-# Root helper library
-libsu-core = { group = "com.github.topjohnwu.libsu", name = "core", version.ref = "libsu" }
-libsu-service = { group = "com.github.topjohnwu.libsu", name = "service", version.ref = "libsu" }
+# SSH
+kossh = { module = "com.github.jkelly467:kossh", version.ref = "kossh" }
 
 # Navigation
 voyager-core = { group = "cafe.adriel.voyager", name = "voyager-core", version.ref = "voyager" }

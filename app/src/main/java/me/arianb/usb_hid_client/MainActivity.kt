@@ -13,7 +13,6 @@ import cafe.adriel.voyager.core.screen.Screen
 import cafe.adriel.voyager.navigator.Navigator
 import cafe.adriel.voyager.navigator.NavigatorDisposeBehavior
 import cafe.adriel.voyager.transitions.SlideTransition
-import com.topjohnwu.superuser.Shell
 import me.arianb.usb_hid_client.settings.SettingsViewModel
 import me.arianb.usb_hid_client.troubleshooting.ProductionTree
 import me.arianb.usb_hid_client.ui.standalone_screens.OnboardingScreen
@@ -26,7 +25,6 @@ class MyApplication : Application() {
 
         if (BuildConfig.DEBUG) {
             Timber.plant(Timber.DebugTree())
-            Shell.enableVerboseLogging = true
         }
 
         Timber.plant(ProductionTree())
