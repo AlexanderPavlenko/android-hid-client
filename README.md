@@ -67,7 +67,11 @@ keys to the connected computer to control media.
 
 ### Installation (Binary)<a name="installation-binary"> </a>
 
-TODO: Obtanium link to APK.
+[Obtain](obtainium://add/https://github.com/AlexanderPavlenko/android-hid-client) via [Obtanium](https://github.com/ImranR98/Obtainium?tab=readme-ov-file#installation)!
+
+Verification info:
+- Package ID: top.flvr.ssh_hid_client
+- SHA-256 of the signing certificate: A9:38:D4:A9:02:5A:C1:4A:7B:89:CC:FF:7A:EB:A3:9D:C3:21:43:84:5D:C9:7B:68:4E:A4:01:92:81:2A:46:BC
 
 ### Installation (Source)<a name="installation-source"></a>
 

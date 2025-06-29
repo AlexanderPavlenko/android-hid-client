@@ -52,10 +52,18 @@ abstract class ReportSender() {
         writeBytes(report, shell)
     }
 
-    // Writes HID report to character device
-    @OptIn(ExperimentalStdlibApi::class)
-    @Throws(IOException::class, FileNotFoundException::class)
     fun writeBytes(report: ByteArray, shell: SSHShell) {
+        val cmd = wrapBytes(report)
+        shell.execute(cmd)
+    }
+
+    fun writeBatch(reports: Array<ByteArray>, shell: SSHShell) {
+        val cmd = reports.joinToString(" ; sleep 0.05 ; ") { wrapBytes(it) }
+        shell.execute(cmd)
+    }
+
+    @OptIn(ExperimentalStdlibApi::class)
+    fun wrapBytes(report: ByteArray): String {
         val keycode = report.toHexString(
             HexFormat {
                 bytes {
@@ -68,8 +76,6 @@ abstract class ReportSender() {
                 }
             }
         )
-        val cmd = "echo -ne \"${keycode}\" | sudo tee -a /dev/hidg0"
-//        Timber.i(cmd)
-        shell.execute(cmd)
+        return "echo -ne \"${keycode}\" | sudo tee -a /dev/hidg0"
     }
 }

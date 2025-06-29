@@ -14,13 +14,11 @@ class KeySender() : ReportSender() {
     // Every time we send a report, we only send the "key-down" event. This method will automatically send the "key-up"
     // event right afterward
     override fun sendReport(report: ByteArray, shell: SSHShell) {
-        // Send "key-down" report
-        writeBytes(report, shell)
-
-        // Send "key-up" report of all zeroes (preserving report ID) to release
+        // "key-up" report of all zeroes (preserving report ID) to release
         val releaseReport = ByteArray(report.size)
         releaseReport[0] = report[0]
-        writeBytes(releaseReport, shell)
+
+        writeBatch(arrayOf(report, releaseReport), shell)
     }
 
     companion object {
